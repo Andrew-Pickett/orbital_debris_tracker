@@ -21,8 +21,9 @@ def _load_credentials() -> dict[str, str]:
     }
 
 
-async def fetch_data(client: httpx.AsyncClient,
-                     credentials: dict[str, str]) -> list[DataModel]:
+async def fetch_data(
+    client: httpx.AsyncClient, credentials: dict[str, str]
+) -> list[DataModel]:
     base_url = "https://www.space-track.org"
     request_login = "/ajaxauth/login"
     request_query = "/basicspacedata/query"
@@ -31,7 +32,7 @@ async def fetch_data(client: httpx.AsyncClient,
         "ECCENTRICITY/<0.25/OBJECT_TYPE/payload/format/json"
     )
 
-#    async with httpx.AsyncClient(transport=transport) as client:
+    #    async with httpx.AsyncClient(transport=transport) as client:
 
     login_response = await client.post(
         base_url + request_login,
