@@ -26,6 +26,7 @@ htmlcov/
 # Environment and secrets
 .env
 .env.*
+/app/pipeline/SLTrack.ini
 
 # Local data downloads (keep docs like data/README.md)
 data/*.tle
