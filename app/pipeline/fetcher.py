@@ -43,3 +43,10 @@ async def fetch_data(
     data_response = await client.get(base_url + request_query + geo_query)
     data_response.raise_for_status()
     return record_adapter.validate_python(data_response.json())
+
+
+async def fetch_catalog() -> list[DataModel]:
+    credentials = _load_credentials()
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        return await fetch_data(client, credentials)

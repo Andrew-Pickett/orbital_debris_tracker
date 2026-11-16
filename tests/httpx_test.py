@@ -9,6 +9,7 @@ from app.pipeline.fetcher import fetch_data
 
 fake_credentials = {"identity": "fake-user", "password": "fake-password"}
 
+
 @pytest.mark.anyio
 async def test_fetch_data_parses_catalog():
 
